@@ -90,7 +90,7 @@ class _CandidatState extends State<Candidat> {
                 return CardHorizontal(
                     title:
                         "${candidat[index]["candidatNom"]} ${candidat[index]["candidatPrenoms"]}",
-                    //img: candidat[index]["candidat_photo"],
+                     img: candidat[index]["candidat_photo"],
                     tap: () {
                       Navigator.pushNamed(context, '/detailP',
                           arguments: {'candidat': candidat[index]});

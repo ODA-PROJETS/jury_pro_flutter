@@ -36,16 +36,16 @@ class _EvenementState extends State<Evenement> {
     });
   }
 
-  @override
-  void initState() {
-    super.initState();
-    getAllEvent();
-    this._typeController = TextEditingController();
-    this._nomController = TextEditingController();
-    this._dateDebutController = TextEditingController();
-    this._dateFinController = TextEditingController();
-    _reset();
-  }
+    @override
+    void initState() {
+      super.initState();
+      getAllEvent();
+      this._typeController = TextEditingController();
+      this._nomController = TextEditingController();
+      this._dateDebutController = TextEditingController();
+      this._dateFinController = TextEditingController();
+      _reset();
+    }
 
   @override
   Widget build(BuildContext context) {

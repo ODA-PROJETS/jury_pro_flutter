@@ -9,8 +9,18 @@ import 'package:demo/widgets/navbar.dart';
 import 'package:demo/widgets/drawer.dart';
 
 class Profile extends StatelessWidget {
+  void _change(String ip) {
+    setState() {
+      Variable.base_url = ip;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    print(Variable.base_url);
+    TextEditingController _ipController;
+    _ipController = TextEditingController();
+    _ipController.text = Variable.base_url;
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: Navbar(
@@ -196,17 +206,27 @@ class Profile extends StatelessWidget {
                                           padding: const EdgeInsets.only(
                                               left: 32.0, right: 32.0),
                                           child: Align(
-                                            child: Text("....",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        82, 95, 127, 1),
-                                                    fontSize: 17.0,
-                                                    fontWeight:
-                                                        FontWeight.w200)),
+                                            child: TextField(
+                                              controller: _ipController,
+                                              decoration: const InputDecoration(
+                                                // labelStyle: TextStyle(fontSize: 25),
+                                                labelText: "ip distant:",
+                                                border: OutlineInputBorder(),
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                        SizedBox(height: 15.0),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 32.0, right: 32.0),
+                                          child: RaisedButton(
+                                            color: Colors.deepOrange,
+                                            child: Text("changer"),
+                                            onPressed: () =>
+                                                _change(_ipController.text),
+                                          ),
+                                        ),
+                                        SizedBox(height: 55.0),
                                         Container(
                                           child: RaisedButton.icon(
                                               padding: EdgeInsets.all(10),
